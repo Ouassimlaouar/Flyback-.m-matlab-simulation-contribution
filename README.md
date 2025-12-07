@@ -10,52 +10,35 @@ The project provides a unified framework for **large-signal simulation**, **smal
 
 ## Features
 
--  Two-mode state-space modeling (Switch ON / Switch OFF)
-
--  Large-signal averaged model
-
--  Small-signal control-to-output and input-to-output transfer functions
-
--  PWM-based time-domain simulation using RK4 numerical integration
-
--  Steady-state performance metrics (voltage, ripple, current, power, efficiency)
-
--  Frequency-domain analysis:
-
+- Two-mode state-space modeling (Switch ON / Switch OFF)
+- Large-signal averaged model
+- Small-signal control-to-output and input-to-output transfer functions
+- PWM-based time-domain simulation using RK4 numerical integration
+- Steady-state performance metrics (voltage, ripple, current, power, efficiency)
+- Frequency-domain analysis:
   - Bode plots
-
   - Nyquist diagrams
-
   - Gain and phase margins
-
   - Automatic extraction of poles and zeros
-
--  High-resolution PWM discretization
+- High-resolution PWM discretization
 
 ---
 
 ## State Variables
 
 | Variable | Description |
-
 |----------|-------------|
-
-| iₗₘ | Magnetizing inductance current |
-
-| vC | Output capacitor voltage |
+| i_Lm | Magnetizing inductance current |
+| v_C | Output capacitor voltage |
 
 ---
 
 ## Model Inputs
 
 | Input | Description |
-
 |-------|-------------|
-
-| Vᵢₙ | Input voltage |
-
+| V_in | Input voltage |
 | V_d | Diode forward voltage |
-
 | d | Duty cycle (control input for small-signal analysis) |
 
 ---
@@ -63,27 +46,16 @@ The project provides a unified framework for **large-signal simulation**, **smal
 ## Simulation Parameters (Default)
 
 | Parameter | Symbol | Value |
-
 |-----------|--------|-------|
-
-| Input Voltage | Vᵢₙ | 24 V |
-
+| Input Voltage | V_in | 24 V |
 | Switching Frequency | f_sw | 100 kHz |
-
 | Duty Cycle | d | 0.8 |
-
 | Load Resistance | R | 10 Ω |
-
 | Output Capacitance | C | 47 µF |
-
-| Magnetizing Inductance | Lₘ | 100 µH |
-
+| Magnetizing Inductance | L_m | 100 µH |
 | Turns Ratio | n | 2 |
-
 | Switch Resistance | R_sw | 0.1 Ω |
-
 | Capacitor ESR | R_c | 0.05 Ω |
-
 | Diode Drop | V_d | 0.7 V |
 
 ---
@@ -91,17 +63,11 @@ The project provides a unified framework for **large-signal simulation**, **smal
 ## Output Quantities
 
 - Output voltage and ripple
-
 - Magnetizing current (average, peak, ripple)
-
 - Output power
-
 - Estimated efficiency
-
 - Small-signal transfer functions:
-
   - **Gvd(s)** – Control-to-output
-
   - **Gvg(s)** – Input-to-output
 
 ---
@@ -110,32 +76,22 @@ The project provides a unified framework for **large-signal simulation**, **smal
 
 The script automatically generates:
 
--  Time-domain waveforms
-
--  Zoomed switching waveforms
-
--  Phase-plane trajectory
-
--  Instantaneous power and efficiency
-
--  Bode and Nyquist plots with stability margins
+- Time-domain waveforms
+- Zoomed switching waveforms
+- Phase-plane trajectory
+- Instantaneous power and efficiency
+- Bode and Nyquist plots with stability margins
 
 ---
 
 ## Usage
 
 1. Open the MATLAB script.
-
 2. Modify the electrical parameters if needed.
-
 3. Run the script.
-
 ```matlab
-
 % Example: Run the simulation
-
 flyback_ccm_simulation
-
 ```
 
 ---
@@ -143,41 +99,32 @@ flyback_ccm_simulation
 ## Requirements
 
 - MATLAB (R2018b or later recommended)
-
 - Control System Toolbox (for transfer function analysis)
 
 ---
 
 ## Author
 
-LAOUAR Ouassim
-
+**LAOUAR Ouassim**  
 CentraleSupélec
 
 ---
 
 ## License
 
-This project is licensed under the MIT License see the LICENSE file for details.
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+---
 
 ## Reference
 
 If you use this code in your research, please cite:
-
 ```bibtex
-
 @inproceedings{raj2015modelling,
-
   title={Modelling of Flyback Converter Using State-Space Averaging Technique},
-
   author={Raj, A. S. and others},
-
   booktitle={2015 IEEE International Conference on Electronics, Computing and Communication Technologies (CONECCT)},
-
   year={2015},
-
   doi={10.1109/CONECCT.2015.7383871}
-
 }
-
-
+```

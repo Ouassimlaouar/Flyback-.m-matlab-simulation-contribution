@@ -156,6 +156,10 @@ CentraleSupélec
 
 ---
 
+## License
+
+This project is licensed under the MIT License see the LICENSE file for details.
+
 ## Reference
 
 If you use this code in your research, please cite:
